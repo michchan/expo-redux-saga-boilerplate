@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "expo-redux-saga-boilerplate",
+    "description": "An empty new project",
+    "slug": "expo-redux-saga-boilerplate",
+    "privacy": "public",
+    "sdkVersion": "23.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hostType": "lan",
+  "lanType": "ip",
+  "dev": true,
+  "strict": false,
+  "minify": false,
+  "urlType": "exp",
+  "urlRandomness": "k2-w8i"
+}
