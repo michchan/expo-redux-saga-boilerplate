@@ -260,7 +260,6 @@ gradle-app.setting
 .history
 
 # EXPO #
-.expo/
-.expo/*
+.expo
 
 # End of https://www.gitignore.io/api/node,macos,reactnative,visualstudiocode
