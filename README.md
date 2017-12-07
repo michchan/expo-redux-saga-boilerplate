@@ -3,6 +3,12 @@
 A boilerplate for React Native (Expo), with Redux, Redux Saga and React Navigation.
 Heavily inspired by https://github.com/jacobtoye/react-native-redux-boilerplate
 
+# Usage
+
+To run the project using:
+1. Exp CLI: `exp start`
+2. Expo XDE
+
 # Stack Used
 
 | Name                  | Usage                                        |                  
