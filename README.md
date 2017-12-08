@@ -5,9 +5,9 @@ Heavily inspired by https://github.com/jacobtoye/react-native-redux-boilerplate
 
 # Usage
 
-To run the project using:
-1. Exp CLI: `exp start`
-2. Expo XDE
+1. Replace `App.js`, `assets` and `src` in your Expo / Create-React-Native-App project.
+2. Copy all dependencies from `package.json` and run `yarn` or `npm install`
+3. Run your project!
 
 # Stack Used
 
