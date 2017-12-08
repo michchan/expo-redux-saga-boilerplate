@@ -259,4 +259,7 @@ gradle-app.setting
 !.vscode/extensions.json
 .history
 
+### EXPO ###
+.expo
+
 # End of https://www.gitignore.io/api/node,macos,reactnative,visualstudiocode
