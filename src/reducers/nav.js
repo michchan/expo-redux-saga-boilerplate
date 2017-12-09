@@ -4,7 +4,7 @@ import {
     MAIN_ROUTE,
     SIGN_IN_ROUTE,
 } from '../constants/routes';
-import { AppNavigator } from 'containers/AppNavigator';
+import { AppNavigator } from '../containers/AppNavigator';
 
 import { NAV__RESET_TO_MAIN, NAV__RESET_TO_SIGN_IN } from '../actions/types';
 

@@ -2,20 +2,39 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
-    "axios": "0.17.1",
     "expo": "^23.0.0",
-    "prop-types": "15.6.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "prop-types": "15.6.0",    
+    "axios": "0.17.1",    
     "react-navigation": "1.0.0-beta.19",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "redux-logger": "3.0.6",
     "redux-saga": "0.16.0",
     "lodash": "4.17.4",
-    "react-native-elements": "0.18.4"
+    "react-native-elements": "0.18.4",
+    "expo-env": "1.1.1"
   },
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4"
+  },
+  "scripts": {
+    "start": "exp start",
+    "env:dev": "expo-env --env=dev --configPath=./src/env",
+    "env:staging": "expo-env --env=staging --configPath=./src/env",    
+    "env:prod": "expo-env --env=prod --configPath=./src/env",
+    "start:dev": "npm run env:dev && exp start --dev",
+    "start:prod": "npm run env:prod && exp start --no-dev",
+    "start:staging": "npm run env:staging && exp start --no-dev",
+    "start:dev:tunnel": "npm run env:dev && exp start --dev --tunnel",
+    "start:staging:tunnel": "npm run env:staging && exp start --no-dev --tunnel",
+    "start:prod:tunnel": "npm run env:prod && exp start --no-dev --tunnel",
+    "start:dev:lan": "npm run env:dev && exp start --dev --lan",
+    "start:staging:lan": "npm run env:staging && exp start --no-dev --lan",
+    "start:prod:lan": "npm run env:prod && exp start --no-dev --lan",
+    "publish:dev": "npm run env:dev && exp publish",
+    "publish:prod": "npm run env:prod && exp publish",
+    "publish:staging": "npm run env:staging && exp publish"
   }
 }

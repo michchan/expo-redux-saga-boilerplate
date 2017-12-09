@@ -18,8 +18,7 @@
       "supportsTablet": true
     },
     "extra": {
-      "env": "development",
-      "apiHost": "dev.somehost.com"
+      "test": "prod"
     }
   }
 }
