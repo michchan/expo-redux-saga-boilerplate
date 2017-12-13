@@ -5,5 +5,5 @@ export default {
         width: SCREEN_WIDTH,
         height: SCREEN_HEIGHT,
     },
-    isSmallDevice: width < 375,
+    isSmallDevice: SCREEN_WIDTH < 375,
 };

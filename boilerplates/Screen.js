@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import {} from '../../components';
 import Layout from '../../constants/layout';
-import { colors, fontSize, grid } from '../constants/theme';
+import { colors, fontSize, grid } from '../../constants/theme';
 
 export const SomeScreen = props => (
     <View style={styles.container}>
