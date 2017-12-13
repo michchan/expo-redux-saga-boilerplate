@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import {} from '../screens';
+import {} from '../components';
 import {} from '../actions';
 
 class SomeContainer extends React.Component {
