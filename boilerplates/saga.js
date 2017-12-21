@@ -1,7 +1,7 @@
 import { take, call, put, race, all } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 
-import {} from '../actions/types';
+import {} from '../actions';
 
 import {} from '../api';
 

@@ -1,7 +1,7 @@
 import {
-    APP__LOAD_RESOURCES_SUCCESS,
-    APP__LOAD_RESOURCES_ERROR,
-} from '../actions/types';
+    LOAD_APP_RESOURCES_SUCCESS,
+    LOAD_APP_RESOURCES_ERROR,
+} from '../../actions';
 
 const INITIAL_STATE = {
     loggedIn: false,
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 
 export const auth = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case APP__LOAD_RESOURCES_SUCCESS:
+        case LOAD_APP_RESOURCES_SUCCESS:
             return { ...state, authToken: action.authToken? action.authToken : '' };
         default:
             return state;

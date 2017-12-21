@@ -33,6 +33,9 @@
     "start:dev:lan": "npm run env:dev && exp start --dev --lan",
     "start:staging:lan": "npm run env:staging && exp start --no-dev --lan",
     "start:prod:lan": "npm run env:prod && exp start --no-dev --lan",
+    "start:dev:lan-c": "npm run env:dev && exp start --dev --lan -c",
+    "start:staging:lan-c": "npm run env:staging && exp start --no-dev --lan -c",
+    "start:prod:lan-c": "npm run env:prod && exp start --no-dev --lan -c",
     "publish:dev": "npm run env:dev && exp publish",
     "publish:prod": "npm run env:prod && exp publish",
     "publish:staging": "npm run env:staging && exp publish"

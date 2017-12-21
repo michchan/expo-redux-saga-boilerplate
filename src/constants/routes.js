@@ -1,4 +1,5 @@
-export const APP_LOADING = 'APP_LOADING';
-export const MAIN_ROUTE = 'Main';
-export const SIGN_IN_ROUTE = 'SignIn';
-export const HOME_ROUTE = 'Home';
+export const APP_LOADING_SCREEN = 'AppLoadingScreen';
+export const MAIN_ROUTE = 'MainRoute';
+export const AUTH_ROUTE = 'AuthRoute';
+export const SIGN_IN_SCREEN = 'SignInScreen';
+export const HOME_SCREEN = 'HomeScreen';

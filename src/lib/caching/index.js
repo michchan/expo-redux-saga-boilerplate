@@ -12,3 +12,9 @@ export const loadResourcesAsync = async (assets = [], fonts = {}) => {
         Font.loadAsync(fonts),
     ]);
 }
+
+/**
+ * Load asset from the cache.
+ * @param {Number} module - required asset e.g. [ require('./images/some.png') ] 
+ */
+export const loadCachedAsset = (module) => Asset.fromModule(module);

@@ -12,10 +12,8 @@ export const SomeScreen = props => (
     </View>
 );
 
-SomeScreen.defaultProps = {
-};
-SomeScreen.propTypes = {
-};
+SomeScreen.defaultProps = {};
+SomeScreen.propTypes = {};
 
 const _getStyleProps = () => ({});
 

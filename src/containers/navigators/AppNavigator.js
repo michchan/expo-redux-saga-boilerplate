@@ -8,33 +8,16 @@ import {
     StackNavigator,
     TabNavigator,
 } from 'react-navigation';
+import _ from 'lodash';
 
-import * as Routes from '../constants/routes';
+import * as Routes from '../../constants/routes';
+import { getCurrentRoute } from '../../lib/navigation';
+import { CLEAR_ALL_BLOCKED_EFFECTS } from '../../actions';
 
-import { 
-    HomeScreen, 
-    SignInScreen,
-} from '../screens'
+import { RootNavigator } from '.';
 
-import AppLoadingScreen from './AppLoadingScreen';
-
-/* Routes */
-const MainTabNavigator = StackNavigator({
-    [Routes.HOME_ROUTE]: { screen: HomeScreen },
-}, {
-    headerMode: 'none',
-});
-
-export const AppNavigator = StackNavigator({
-    [Routes.APP_LOADING]: { screen: AppLoadingScreen },
-    [Routes.SIGN_IN_ROUTE]: { screen: SignInScreen },
-    [Routes.MAIN_ROUTE]: { screen: MainTabNavigator },
-}, {
-    headerMode: 'none',
-});
-
-/* Root Navigator */
-class Navigation extends React.Component {
+/* App Navigator */
+class _AppNavigator extends React.Component {
     static propTypes = {
         nav: PropTypes.object.isRequired,
     }
@@ -63,6 +46,17 @@ class Navigation extends React.Component {
         });
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextRoute = getCurrentRoute(nextProps.nav).routeName;
+        console.log('Next route: '+nextRoute);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(! _.isEqual(prevProps.nav, this.props.nav)) {
+            this.props.dispatch({ type: CLEAR_ALL_BLOCKED_EFFECTS });
+        }
+    }
+
     componentWillUnmount() {
         if (Platform.OS === 'android') {
             BackHandler.removeEventListener('hardwareBackPress');
@@ -73,7 +67,7 @@ class Navigation extends React.Component {
         const { dispatch, nav, hasSession } = this.props;
 
         return (
-            <AppNavigator
+            <RootNavigator
                 navigation={addNavigationHelpers({ dispatch, state: nav })}
             />
         ); 
@@ -84,4 +78,6 @@ const mapStateToProps = (state, ownProps) => ({
     nav: state.nav,
 });
 
-export default connect(mapStateToProps)(Navigation);
+export const AppNavigator = connect(mapStateToProps)(_AppNavigator);
+
+export default AppNavigator;

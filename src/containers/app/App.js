@@ -6,9 +6,9 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger'
 
 // Here to import root component, reducer, saga
-import AppNavigator from './AppNavigator';
-import reducers from '../reducers';
-import rootSaga from '../sagas';
+import AppNavigator from '../navigators/AppNavigator';
+import reducers from '../../reducers';
+import rootSaga from '../../sagas';
 
 // confiure store
 const sagaMiddleware = createSagaMiddleware();
@@ -26,7 +26,7 @@ sagaMiddleware.run(rootSaga);
 console.disableYellowBox = true;
 
 // App: root component
-class App extends Component {
+export class App extends Component {
     render() {
         return (
             <Provider store={store}>

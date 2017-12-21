@@ -6,11 +6,11 @@ import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import _ from 'lodash';
 
-import { AppLoadingError } from '../components';
+import { AppLoadingError } from '../../components';
 
-import { assetImages } from '../../assets/images';
-import { fonts } from '../../assets/fonts';
-import { loadAppResources, resetToMainRoute, resetToSignInRoute } from '../actions';
+import { assetImages } from '../../../assets/images';
+import { fonts } from '../../../assets/fonts';
+import { loadAppResources, resetToMainRoute, resetToSignInRoute } from '../../actions';
 
 const IMAGES_TO_LOAD = _.toArray(assetImages);
 
@@ -19,7 +19,7 @@ const FONTS_TO_LOAD = {
     ...fonts
 }
 
-class AppLoadingScreen extends Component  {
+class _AppLoadingScreen extends Component  {
     static propTypes = {
         // functions
         loadResources: PropTypes.func.isRequired,
@@ -70,7 +70,7 @@ class AppLoadingScreen extends Component  {
 
     _handleFinishLoading = (props) => {
         console.log('All Pre-loading complete!');
-        props.resetRoute(props.hasAuthToken);
+        props.resetRoute(props.hasAuthToken, props.isAppDirty);
     };
 }
 
@@ -79,6 +79,7 @@ const mapStateToProps = (state, ownProps) => ({
     isAppReady: state.ui.appLoading.ready,
     loadingError: state.ui.appLoading.error,
     hasAuthToken: !!state.auth.authToken, // replaced with some states
+    isAppDirty: state.app.isAppDirty,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -87,10 +88,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
      * Reset route to auth route or main route when all resources is ready.
      * At this point, the flag whether an auth token is stored in the app should be determined.
      */
-    resetRoute: (hasAuthToken) => {
+    resetRoute: (hasAuthToken, isAppDirty) => {
         console.log('resetRoute');
         dispatch(hasAuthToken? resetToMainRoute(): resetToSignInRoute());
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppLoadingScreen);
+export const AppLoadingScreen = connect(mapStateToProps, mapDispatchToProps)(_AppLoadingScreen);
+
+export default AppLoadingScreen;

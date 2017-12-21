@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements'
 
-import { fontFix, width, height, size } from '../lib/dimension';
+import { fontFix, width, height, size } from '../../lib/dimension';
 
 export const AppLoadingError = (props = {}) => {
     return (

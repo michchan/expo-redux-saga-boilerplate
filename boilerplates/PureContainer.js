@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import {} from '../screens';
-import {} from '../actions';
+import { SomeScreen as _SomeScreen } from '../../screens';
+import {} from '../../actions';
 
 const mapStateToProps = (state, ownProps) => ({ });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({ });
 
-export default connect(mapStateToProps, mapDispatchToProps)( SomeScreen );
+export const SomeScreen = connect(mapStateToProps, mapDispatchToProps)( _SomeScreen );
+
+export default SomeScreen;

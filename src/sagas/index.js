@@ -1,16 +1,16 @@
 import { fork, takeEvery, takeLatest, all } from 'redux-saga/effects';
 
 import {
-    APP__LOAD_RESOURCES,
-} from '../actions/types';
+    LOAD_APP_RESOURCES,
+} from '../actions';
 
 import {
     handleAppLoading,
-} from './app';
+} from './app_loading';
 
 const root = function* root() {
     yield all([
-        takeLatest(APP__LOAD_RESOURCES, handleAppLoading),
+        takeLatest(LOAD_APP_RESOURCES, handleAppLoading),
     ]);
 }
 
