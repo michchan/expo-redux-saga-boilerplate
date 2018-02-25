@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { Button, View, Text } from 'react-native';
-import { HOME_SCREEN } from '../../constants/routes'
+import { HOME_SCREEN } from '../../constants/routes';
 
-export class SignInScreen extends Component {
+export class DetailsScreen extends Component {
+  static navigationOptions = {
+      title: 'Details',
+    };
+
   render() {
-    return(
+    return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>this is a Sign In screen</Text>
-          <Button
+        <Text>this is a Details screen</Text>
+        <Button
             title="Go to Home"
             onPress={() => this.props.navigation.navigate(HOME_SCREEN)}
-          />
+        />
       </View>
     );
   }
 }
 
-export default SignInScreen;
+export default DetailsScreen;

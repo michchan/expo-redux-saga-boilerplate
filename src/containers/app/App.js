@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { applyMiddleware, createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger'
+import {
+  createReduxBoundAddListener,
+  createReactNavigationReduxMiddleware,
+} from 'react-navigation-redux-helpers';
+import { addNavigationHelpers } from 'react-navigation';
 
 // Here to import root component, reducer, saga
 import AppNavigator from '../navigators/AppNavigator';
@@ -13,7 +18,15 @@ import rootSaga from '../../sagas';
 // confiure store
 const sagaMiddleware = createSagaMiddleware();
 
+// Note: createReactNavigationReduxMiddleware must be run before createReduxBoundAddListener
+const navigationMiddleware = createReactNavigationReduxMiddleware(
+  "root",
+  state => state.nav,
+);
+export const addListener = createReduxBoundAddListener("root");
+
 const middleware = [
+    navigationMiddleware,
     sagaMiddleware,
     logger,
 ];
@@ -39,6 +52,11 @@ export class App extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+  nav: state.nav
+});
+
+const AppWithNavigationState = connect(mapStateToProps)(App);
 
 const styles = StyleSheet.create({
     container: {
@@ -51,4 +69,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default AppWithNavigationState;
