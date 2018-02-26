@@ -2,17 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-    addNavigationHelpers,
-    NavigationActions,
     StackNavigator,
-    TabNavigator,
 } from 'react-navigation';
 
 import * as Routes from '../../constants/routes';
 
 import { AuthTabNavigator } from './AuthTabNavigator';
 import { MainTabNavigator } from './MainTabNavigator';
-
 import { AppLoadingScreen } from '../app/AppLoadingScreen';
 
 export const RootNavigator = StackNavigator({

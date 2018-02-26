@@ -9,6 +9,7 @@ import {
     TabNavigator,
 } from 'react-navigation';
 import _ from 'lodash';
+import { addListener } from '../app/App.js'
 
 import * as Routes from '../../constants/routes';
 import { getCurrentRoute } from '../../lib/navigation';
@@ -68,9 +69,9 @@ class _AppNavigator extends React.Component {
 
         return (
             <RootNavigator
-                navigation={addNavigationHelpers({ dispatch, state: nav })}
+                navigation={addNavigationHelpers({ dispatch, state: nav, addListener })}
             />
-        ); 
+        );
     }
 }
 

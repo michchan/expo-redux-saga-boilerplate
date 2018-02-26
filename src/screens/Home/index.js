@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Button, View, Text } from 'react-native';
 
-export const HomeScreen = props => (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+import { DETAILS_SCREEN } from '../../constants/routes';
+
+export class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Header',
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>this is a Home screen</Text>
-    </View>
-);
+        <Button
+            title="Go to Details"
+            onPress={() => this.props.navigation.navigate(DETAILS_SCREEN)}
+        />
+      </View>
+    );
+  }
+}
 
 export default HomeScreen;
