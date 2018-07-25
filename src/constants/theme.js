@@ -13,7 +13,7 @@ export const colors = {
 
     LIGHT_TEXT_PRIMARY: '#ffffff',
 
-    GRADIENT_LIHGT: '#27C9D8',
+    GRADIENT_LIGHT: '#27C9D8',
     GRADIENT_DARK: '#007ADD',
 
     FORM_LIGHT_TITLE: '#c4fcff',
